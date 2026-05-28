@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react';
 import {
     Animated,
     Easing,
-    SafeAreaView,
     Text,
     View,
 } from 'react-native';
 import { splashStyles } from '../styles/splashStyles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const SplashScreen: React.FC = () => {
   const [dotAnimation] = useState([
@@ -40,7 +40,7 @@ const SplashScreen: React.FC = () => {
 
     // Navigate to Onboarding after 3 seconds
     const timer = setTimeout(() => {
-      router.replace('/onboarding'); // use your actual file-based route path
+      router.replace('/onboard'); // use your actual file-based route path
     }, 3000);
 
     return () => clearTimeout(timer);
