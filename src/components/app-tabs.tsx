@@ -2,6 +2,7 @@ import { NativeTabs } from 'expo-router/unstable-native-tabs';
 import { useColorScheme } from 'react-native';
 
 import { Colors } from '@/constants/theme';
+import { NativeStackView } from 'expo-router/build/react-navigation/native-stack';
 
 export default function AppTabs() {
   const scheme = useColorScheme();
