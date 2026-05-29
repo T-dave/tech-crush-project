@@ -1,46 +1,19 @@
 import { router } from 'expo-router';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {
-    Animated,
-    Easing,
-    Text,
-    View,
+  ActivityIndicator,
+  Image,
+  SafeAreaView,
+  Text,?
+  View,
 } from 'react-native';
 import { splashStyles } from '../styles/splashStyles';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 const SplashScreen: React.FC = () => {
-  const [dotAnimation] = useState([
-    new Animated.Value(0),
-    new Animated.Value(0),
-    new Animated.Value(0),
-  ]);
-
   useEffect(() => {
-    // Animate loading dots
-    dotAnimation.forEach((dot, index) => {
-      Animated.loop(
-        Animated.sequence([
-          Animated.delay(index * 200),
-          Animated.timing(dot, {
-            toValue: 1,
-            duration: 600,
-            easing: Easing.ease,
-            useNativeDriver: false,
-          }),
-          Animated.timing(dot, {
-            toValue: 0,
-            duration: 600,
-            easing: Easing.ease,
-            useNativeDriver: false,
-          }),
-        ])
-      ).start();
-    });
-
     // Navigate to Onboarding after 3 seconds
     const timer = setTimeout(() => {
-      router.replace('/onboard'); // use your actual file-based route path
+      router.replace('/(auth)/onboarding');
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -49,28 +22,29 @@ const SplashScreen: React.FC = () => {
   return (
     <SafeAreaView style={splashStyles.container}>
       <View style={splashStyles.contentContainer}>
+        {/* Logo Container with Image */}
         <View style={splashStyles.logoContainer}>
-          <Text style={splashStyles.logo}>🚀</Text>
+          <Image
+            source={require('../assets/ion_rocket-sharp.png')}
+            style={splashStyles.logoImage}
+            resizeMode="contain"
+          />
         </View>
+
+        {/* Title */}
         <Text style={splashStyles.title}>LaunchPad</Text>
+
+        {/* Subtitle */}
         <Text style={splashStyles.subtitle}>
           Your first step{'\n'}into tech. Verified.
         </Text>
+
+        {/* Working Loading Spinner */}
         <View style={splashStyles.loaderContainer}>
-          {dotAnimation.map((dot, index) => (
-            <Animated.View
-              key={index}
-              style={[
-                splashStyles.loaderDot,
-                {
-                  opacity: dot.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0.4, 1],
-                  }),
-                },
-              ]}
-            />
-          ))}
+          <ActivityIndicator 
+            size="large" 
+            color="rgba(255, 255, 255, 0.9)"
+          />
         </View>
       </View>
     </SafeAreaView>
