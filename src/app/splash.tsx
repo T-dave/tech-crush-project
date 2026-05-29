@@ -1,19 +1,14 @@
-import { router } from 'expo-router';
-import React, { useEffect } from 'react';
-import {
-  ActivityIndicator,
-  Image,
-  SafeAreaView,
-  Text,?
-  View,
-} from 'react-native';
-import { splashStyles } from '../styles/splashStyles';
+import React, { useEffect } from "react";
+import { Image, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { splashStyles } from "../styles/splashStyles";
+import SpinnerLoader from "@/components/custom-loader";
+import { router } from "expo-router";
 
 const SplashScreen: React.FC = () => {
   useEffect(() => {
-    // Navigate to Onboarding after 3 seconds
     const timer = setTimeout(() => {
-      router.replace('/(auth)/onboarding');
+      router.replace('/onboard');
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -21,32 +16,20 @@ const SplashScreen: React.FC = () => {
 
   return (
     <SafeAreaView style={splashStyles.container}>
-      <View style={splashStyles.contentContainer}>
-        {/* Logo Container with Image */}
-        <View style={splashStyles.logoContainer}>
-          <Image
-            source={require('../assets/ion_rocket-sharp.png')}
-            style={splashStyles.logoImage}
-            resizeMode="contain"
-          />
-        </View>
-
-        {/* Title */}
-        <Text style={splashStyles.title}>LaunchPad</Text>
-
-        {/* Subtitle */}
-        <Text style={splashStyles.subtitle}>
-          Your first step{'\n'}into tech. Verified.
-        </Text>
-
-        {/* Working Loading Spinner */}
-        <View style={splashStyles.loaderContainer}>
-          <ActivityIndicator 
-            size="large" 
-            color="rgba(255, 255, 255, 0.9)"
-          />
-        </View>
-      </View>
+      <Image
+        source={require("../../assets/images/ion_rocket-sharp.png")}
+        style={splashStyles.logoImage}
+        resizeMode="contain"
+      />
+      <Text style={splashStyles.title}>LaunchPad</Text>
+      <Text style={splashStyles.subtitle}>
+        Your first step{"\n"}into tech. Verified.
+      </Text>
+      <SpinnerLoader
+        size={45}
+        dotSize={6}
+        color="#FFFFFF"
+      />
     </SafeAreaView>
   );
 };
