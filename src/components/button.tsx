@@ -6,6 +6,7 @@ import {
 } from "react-native";
 import { Colors } from "../constants/theme";
 import { ThemedText } from "./themed-text";
+import { useTheme } from "expo-router";
 
 type Type = "primary" | "secondary";
 
@@ -27,21 +28,21 @@ export default function Button({
   title,
   style,
 }: props) {
- 
+ const theme = useTheme();
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[
         styles.button,
         styles[type],
-        {backgroundColor:buttonColor || type==='primary' ? Colors.primary : Colors.secondary},
+        {backgroundColor:buttonColor || type==='primary' ? Colors.primary : theme['background']},
         style,
       ]}
     >
       {isLoading ? (
         <ActivityIndicator size={23} />
       ) : (
-        <ThemedText style={[styles.text, {color:textColor || "#FFF"}]}>{title}</ThemedText>
+        <ThemedText style={[styles.text, {color:textColor || type==='primary' ? "#FFF": "#212FB2"}]}>{title}</ThemedText>
       )}
     </TouchableOpacity>
   );
@@ -49,7 +50,6 @@ export default function Button({
 
 const styles = StyleSheet.create({
   button: {
-    margin: 20,
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
@@ -58,8 +58,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
   },
   secondary: {
-    borderWidth: 1,
-    borderColor: 'green',
   },
   text:{
     fontSize:18,

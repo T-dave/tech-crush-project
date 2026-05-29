@@ -9,12 +9,12 @@ export const onboardingData = [
     id: "2",
     title: "Avoid scams & protected",
     description: "Every company and job on LaunchPad is screened to keep you safe.",
-    image: require("../assets/images/bg1.png"),
+    image: require("../assets/images/bg2.png"),
   },
   {
     id: "3",
     title: "Apply confidently and get noticed",
     description: "Easy applications, real feedback and tracking that keeps you informed.",
-    image: require("../assets/images/bg1.png"),
+    image: require("../assets/images/bg3.png"),
   },
 ];

@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
   },
   activeDot: {
     backgroundColor: Colors.primary,
-    width: 16,
+    width: 10,
   },
 });

@@ -1,8 +1,8 @@
 import Button from "@/components/button";
 import useHook from "@/hooks/general-hook";
-import { router } from "expo-router";
+import { router, useTheme } from "expo-router";
 import React, { useRef, useState } from "react";
-import { FlatList, StyleSheet, TouchableOpacity } from "react-native";
+import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import OnboardingItem from "@/components/onboard";
 import Paginator from "@/components/paginator";
@@ -35,6 +35,8 @@ const OnboardingScreen = () => {
       console.error(e);
     }
   };
+  
+  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -53,7 +55,13 @@ const OnboardingScreen = () => {
         ref={flatListRef}
       />
       <Paginator data={onboardingData} currentIndex={currentIndex} />
+      <View style={{margin:20}}>
       <Button onPress={scrollToNext} isLoading={isLoading} title={currentIndex === onboardingData.length - 1 ? "Get Started" : "Next"}/>
+      {
+        currentIndex === onboardingData.length - 1 &&
+        <Button onPress={()=>router.replace('/')} title="Sign in" type="secondary"/>
+      }
+      </View>
     </SafeAreaView>
   );
 };
