@@ -29,7 +29,7 @@ const OnboardingScreen = () => {
     setIsLoading(true);
     try {
       setIsLoading(false);
-      router.navigate("/");
+      router.navigate("/auth");
     } catch (e) {
       setIsLoading(false);
       console.error(e);
