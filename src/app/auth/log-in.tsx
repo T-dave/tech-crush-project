@@ -9,17 +9,14 @@ import { useState } from "react"
 import { Text, TouchableOpacity, TouchableWithoutFeedback, View, Image } from "react-native"
 import Bottom from "./bottom"
 import { router } from "expo-router"
-export default function Register(){
+export default function LogIn(){
     const [ tick, setTick ] = useState(false);
     const [ type, setType ] = useState("seeker")
     return(
         <Container style={{paddingHorizontal:20}}>
-            <View style = {authStyles.launchpadView}>
-                <ThemedText type="small" color="#FFF">JOIN LAUNCHPAD</ThemedText>
-            </View>
-            <Top title="Create your free account" subtitle="Verified internship & jobs built for beginners like you"/>
+            <Top title="Welcome back" subtitle="SIgn in to your account"/>
             <View style={{marginVertical:20}}>
-                <ThemedText>I AM A</ThemedText>
+                <ThemedText>Sign in as</ThemedText>
                 <View style={authStyles.typeView}>
                     <Button 
                         onPress={()=>setType("seeker")} 
@@ -37,12 +34,7 @@ export default function Register(){
                 </View>
             </View>
             <View>
-                <View style={authStyles.names}>
-                    <LabelInput label="First Name" placeholder="Tunde"/>
-                    <LabelInput label="Last Name" placeholder="Adeleke"/>
-                </View>
                 <LabelInput label="Email Address" placeholder="tunde@gmail.com"/>
-                <LabelInput label="Tech Track" placeholder="e.g. Frontend, Design..."/>
                 <LabelInput label="Password"/>
             </View>
             <View style={authStyles.terms}>
@@ -59,7 +51,7 @@ export default function Register(){
                     <ThemedText type="small" color={Colors.primary}> Privacy Policy</ThemedText>.
                 </ThemedText>
             </View>
-            <Bottom buttonText="Create Account" bottomText="Log In" navigation={()=>router.navigate('/auth/log-in')}/>
+            <Bottom buttonText="Log In" bottomText="Sign Up" navigation={()=>router.replace('/auth')}/>
         </Container>
     )
 }

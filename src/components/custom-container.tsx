@@ -1,4 +1,4 @@
-import { ScrollView, useColorScheme, ViewProps } from "react-native";
+import { KeyboardAvoidingView, Platform, ScrollView, useColorScheme, ViewProps } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ThemeColor } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
@@ -19,9 +19,14 @@ export default function Container({children, style, lightColor, darkColor, type}
           : lightColor ?? theme[type ?? 'background'];
     return(
         <SafeAreaView style={{flex:1, backgroundColor}}>
-            <ScrollView style={[{ flexGrow:1 }, style]}>
-                {children}
-            </ScrollView>
+            <KeyboardAvoidingView
+                style={{ flex: 1 }}
+                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            >
+                <ScrollView contentContainerStyle={[{ flexGrow:1 }, style]} showsVerticalScrollIndicator={false}>
+                    {children}
+                </ScrollView>
+            </KeyboardAvoidingView>
         </SafeAreaView>
     )
 }

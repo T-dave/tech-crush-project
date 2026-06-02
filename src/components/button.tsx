@@ -35,14 +35,14 @@ export default function Button({
       style={[
         styles.button,
         styles[type],
-        {backgroundColor:buttonColor || type==='primary' ? Colors.primary : theme['background']},
+        {backgroundColor:buttonColor ? buttonColor : type==='primary' ? Colors.primary : "#2563EB14"},
         style,
       ]}
     >
       {isLoading ? (
         <ActivityIndicator size={23} />
       ) : (
-        <ThemedText style={[styles.text, {color:textColor || type==='primary' ? "#FFF": "#212FB2"}]}>{title}</ThemedText>
+        <ThemedText style={[styles.text, {color:textColor ? textColor : type==='primary' ? "#FFF": "#212FB2"}]}>{title}</ThemedText>
       )}
     </TouchableOpacity>
   );

@@ -13,10 +13,68 @@ export const authStyles = StyleSheet.create({
         flexDirection:'row',
         borderWidth:0.5,
         borderColor:"#00000033",
-        borderRadius:12
+        borderRadius:12,
     },
     type:{
         flex:1,
         margin:5
     },
+    names:{
+        flexDirection:'row',
+        gap:20
+    },
+    terms:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
+        marginVertical:10
+    },
+    box:{
+        backgroundColor:'#F5F5F5',
+        borderWidth:1,
+        borderColor:"#00000080",
+        height:18,
+        width:18,
+        borderRadius:2,
+        marginRight:10,
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    bottom:{
+        marginTop:20,
+    },
+    lineView:{
+        flexDirection:'row',
+        alignItems:'center',
+        marginVertical:10
+    },
+    line:{
+        borderWidth:0.5,
+        borderColor: "#00000080",
+        flex:1,
+        height:1
+    },
+    socials:{
+        flexDirection:'row',
+        gap:20
+    },
+    social:{
+        flexDirection:'row',
+        borderWidth:1,
+        borderColor:"#1D4EDB33",
+        borderRadius:8,
+        alignItems:'center',
+        height:41,
+        justifyContent:'center',
+        flex:1
+    },
+    image:{
+        marginRight:8
+    },
+    down:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
+        marginTop:50
+    }
 });
