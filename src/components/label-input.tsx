@@ -8,7 +8,7 @@ interface LabelInputProps extends ViewProps{
 }
 export default function LabelInput({label, placeholder, style}: LabelInputProps){
     return(
-        <View style={[{flex:1, marginVertical:8}, style]}>
+        <View style={[{marginVertical:8}, style]}>
             <ThemedText>{label}</ThemedText>
             <Input placeholder={placeholder}/>
         </View>

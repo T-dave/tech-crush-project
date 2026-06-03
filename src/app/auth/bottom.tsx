@@ -9,11 +9,12 @@ interface BottomProps{
     buttonText: string;
     bottomText: string;
     navigation: ()=>void;
+    buttonPress: ()=>void;
 }
-export default function Bottom({buttonText, bottomText, navigation}: BottomProps){
+export default function Bottom({buttonText, bottomText, navigation, buttonPress}: BottomProps){
     return(
             <View style={authStyles.bottom}>
-                <Button onPress={()=>console.log("Hii")} title={buttonText}/>
+                <Button onPress={buttonPress} title={buttonText}/>
                 <View style={authStyles.lineView}>
                     <View style={authStyles.line}/>
                     <ThemedText style={{padding:10, color:'#000000B2'}} type="small">or continue with</ThemedText>

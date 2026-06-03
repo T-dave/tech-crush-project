@@ -8,15 +8,16 @@ export type ThemedTextProps = TextProps & {
   themeColor?: ThemeColor;
   color?:string;
   weight?:TextStyle['fontWeight'];
+  size?: TextStyle['fontSize'];
 };
 
-export function ThemedText({ style, type = 'default', themeColor, color, weight, ...rest }: ThemedTextProps) {
+export function ThemedText({ style, type = 'default', themeColor, color, weight, size, ...rest }: ThemedTextProps) {
   const theme = useTheme();
 
   return (
     <Text
       style={[
-        { color: color ?? theme[themeColor ?? 'text'], fontWeight: weight ?? weight},
+        { color: color ?? theme[themeColor ?? 'text']},
         type === 'default' && styles.default,
         type === 'title' && styles.title,
         type === 'small' && styles.small,
@@ -25,6 +26,8 @@ export function ThemedText({ style, type = 'default', themeColor, color, weight,
         type === 'link' && styles.link,
         type === 'linkPrimary' && styles.linkPrimary,
         type === 'code' && styles.code,
+        weight && { fontWeight: weight },
+        size !== undefined && { fontSize: size },
         style,
       ]}
       {...rest}

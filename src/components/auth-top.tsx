@@ -6,10 +6,19 @@ interface TopProps{
     title: string;
     subtitle: string;
 }
-export default function Top({title, subtitle}: TopProps){
+export function Top1({title, subtitle}: TopProps){
     return(
         <View style={{marginVertical:10}}>
-            <ThemedText type="subtitle" color={Colors.primary}>{title}</ThemedText>
+            <ThemedText type="title" color={Colors.primary}>{title}</ThemedText>
+            <ThemedText type="link">{subtitle}</ThemedText>
+        </View>
+    )
+}
+
+export function Top2({title, subtitle}: TopProps){
+    return(
+        <View style={{marginVertical:10}}>
+            <ThemedText type="title">{title}</ThemedText>
             <ThemedText type="link">{subtitle}</ThemedText>
         </View>
     )

@@ -1,4 +1,4 @@
-import Top from "@/components/auth-top"
+import {Top1} from "@/components/auth-top";
 import Button from "@/components/button"
 import Container from "@/components/custom-container"
 import LabelInput from "@/components/label-input"
@@ -17,7 +17,7 @@ export default function Register(){
             <View style = {authStyles.launchpadView}>
                 <ThemedText type="small" color="#FFF">JOIN LAUNCHPAD</ThemedText>
             </View>
-            <Top title="Create your free account" subtitle="Verified internship & jobs built for beginners like you"/>
+            <Top1 title="Create your free account" subtitle="Verified internship & jobs built for beginners like you"/>
             <View style={{marginVertical:20}}>
                 <ThemedText>I AM A</ThemedText>
                 <View style={authStyles.typeView}>
@@ -59,7 +59,7 @@ export default function Register(){
                     <ThemedText type="small" color={Colors.primary}> Privacy Policy</ThemedText>.
                 </ThemedText>
             </View>
-            <Bottom buttonText="Create Account" bottomText="Log In" navigation={()=>router.navigate('/auth/log-in')}/>
+            <Bottom buttonText="Create Account" buttonPress={()=>router.replace('/setup')} bottomText="Log In" navigation={()=>router.navigate('/auth/log-in')}/>
         </Container>
     )
 }

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         borderColor:"#2563EB66",
         borderRadius:5,
         height:50,
-        padding:5
+        padding:5,
     },
     input:{
         flex:1

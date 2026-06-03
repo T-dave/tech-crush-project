@@ -1,4 +1,4 @@
-import Top from "@/components/auth-top"
+import {Top1} from "@/components/auth-top";
 import Button from "@/components/button"
 import Container from "@/components/custom-container"
 import LabelInput from "@/components/label-input"
@@ -14,7 +14,7 @@ export default function LogIn(){
     const [ type, setType ] = useState("seeker")
     return(
         <Container style={{paddingHorizontal:20}}>
-            <Top title="Welcome back" subtitle="SIgn in to your account"/>
+            <Top1 title="Welcome back" subtitle="SIgn in to your account"/>
             <View style={{marginVertical:20}}>
                 <ThemedText>Sign in as</ThemedText>
                 <View style={authStyles.typeView}>
@@ -51,7 +51,7 @@ export default function LogIn(){
                     <ThemedText type="small" color={Colors.primary}> Privacy Policy</ThemedText>.
                 </ThemedText>
             </View>
-            <Bottom buttonText="Log In" bottomText="Sign Up" navigation={()=>router.replace('/auth')}/>
+            <Bottom buttonText="Log In" buttonPress={()=>router.replace('/setup')} bottomText="Sign Up" navigation={()=>router.replace('/auth')}/>
         </Container>
     )
 }
