@@ -1,13 +1,14 @@
-import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-
 import { AnimatedIcon } from '@/components/animated-icon';
 import { HintRow } from '@/components/hint-row';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { WebBadge } from '@/components/web-badge';
-import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
+import { BottomTabInset, Colors, MaxContentWidth, Spacing } from '@/constants/theme';
+import { Ionicons } from '@expo/vector-icons';
+import * as Device from 'expo-device';
+import { router } from 'expo-router';
+import { Platform, StyleSheet, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 function getDevMenuHint() {
   if (Platform.OS === 'web') {
@@ -35,14 +36,77 @@ export default function HomeScreen() {
         <ThemedView style={styles.heroSection}>
           <AnimatedIcon />
           <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
+            Welcome to&nbsp;Tech Crush
           </ThemedText>
         </ThemedView>
 
         <ThemedText type="code" style={styles.code}>
-          get started
+          Job Portal Screens
         </ThemedText>
 
+        {/* Test Screens */}
+        <ThemedView type="backgroundElement" style={styles.stepContainer}>
+          <ThemedText type="subtitle" style={{ marginBottom: Spacing.two }}>
+            Test New Screens:
+          </ThemedText>
+
+          {/* Screen 8: Apply Flow */}
+          <TouchableOpacity
+            style={styles.navButton}
+            onPress={() => router.push('/applyFlow')}
+            activeOpacity={0.7}
+          >
+            <Ionicons
+              name="document-text"
+              size={20}
+              color={Colors.secondary}
+            />
+            <ThemedText type="default" style={styles.navButtonText}>
+              Screen 8: Apply Flow
+            </ThemedText>
+            <Ionicons
+              name="chevron-forward"
+              size={20}
+              color={Colors.secondary}
+            />
+          </TouchableOpacity>
+
+          {/* Screen 9: Review & Submit */}
+          <TouchableOpacity
+            style={styles.navButton}
+            onPress={() => router.push('/reviewSubmit')}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="checkmark-circle" size={20} color={Colors.secondary} />
+            <ThemedText type="default" style={styles.navButtonText}>
+              Screen 9: Review & Submit
+            </ThemedText>
+            <Ionicons
+              name="chevron-forward"
+              size={20}
+              color={Colors.secondary}
+            />
+          </TouchableOpacity>
+
+          {/* Screen 10: Saved Jobs */}
+          <TouchableOpacity
+            style={styles.navButton}
+            onPress={() => router.push('/savedJobs')}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="bookmark" size={20} color={Colors.secondary} />
+            <ThemedText type="default" style={styles.navButtonText}>
+              Screen 10: Saved Jobs
+            </ThemedText>
+            <Ionicons
+              name="chevron-forward"
+              size={20}
+              color={Colors.secondary}
+            />
+          </TouchableOpacity>
+        </ThemedView>
+
+        {/* Dev Tools Info */}
         <ThemedView type="backgroundElement" style={styles.stepContainer}>
           <HintRow
             title="Try editing"
@@ -94,5 +158,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.three,
     paddingVertical: Spacing.four,
     borderRadius: Spacing.four,
+  },
+  navButton: {
+    backgroundColor: Colors.primary,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: Spacing.three,
+    paddingVertical: Spacing.two,
+    borderRadius: Spacing.two,
+    gap: Spacing.two,
+  },
+  navButtonText: {
+    flex: 1,
+    fontWeight: '600',
+    color: Colors.secondary,
   },
 });
