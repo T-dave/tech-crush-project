@@ -4,7 +4,7 @@ import { ThemedText } from "@/components/themed-text";
 import setupSheet from "@/styles/setupSheet";
 import { useState } from "react";
 import { View } from "react-native";
-import { Cv, PersonalInfo } from "../../components/steps";
+import { Cv, PersonalInfo, Preferences, Skills } from "../../components/steps";
 
 export default function Reset() {
   const [page, setPage] = useState(1);
@@ -26,7 +26,7 @@ export default function Reset() {
             </ThemedText>
           </View>
         </View>
-        {page === 1 ? <Cv /> : page === 2 ? <PersonalInfo /> : <></>}
+        {page === 1 ? <Cv /> : page === 2 ? <PersonalInfo /> : page === 3 ? <Skills /> : page === 4 ? <Preferences /> : <></>}
       </View>
       <Button title="Continue" onPress={() => setPage(page + 1)} />
     </Container>

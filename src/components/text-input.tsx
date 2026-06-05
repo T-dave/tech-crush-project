@@ -1,12 +1,13 @@
-import { StyleSheet, TextInput, View, ViewProps } from "react-native";
+import { KeyboardTypeOptions, StyleSheet, TextInput, View, ViewProps } from "react-native";
 
 interface InputProps extends ViewProps{
     placeholder:string | undefined;
+    keyboardType?: KeyboardTypeOptions;
 }
-export default function Input({placeholder, style}:InputProps){
+export default function Input({placeholder, keyboardType, style}:InputProps){
     return(
         <View style={[styles.container, style]}>
-            <TextInput placeholder={placeholder} style={styles.input}/>
+            <TextInput placeholder={placeholder} style={styles.input} keyboardType={keyboardType}/>
         </View>
     )
 }
