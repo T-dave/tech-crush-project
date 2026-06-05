@@ -1,0 +1,88 @@
+import { Colors } from "@/constants/theme";
+import { StyleSheet } from "react-native";
+
+const listingSheet = StyleSheet.create({
+    top:{
+        flexDirection: 'row',
+        justifyContent:'space-between',
+    },
+    paging:{
+        flexDirection:'row',
+        justifyContent:'space-between'
+    },
+    line:{
+        height:3,
+        flex:1,
+        backgroundColor:'#00000040',
+        borderRadius:16
+    },
+    pageView:{
+        flexDirection:'row',
+        alignItems:'center',
+        flex:1
+    },
+    page:{
+        alignItems:'center'
+    },
+    pageNum:{
+        width:29,
+        height:29,
+        alignItems:'center',
+        justifyContent:'center',
+        backgroundColor:Colors.primary,
+        borderRadius:50,
+    },
+    card:{
+        borderWidth:1,
+        borderColor:'#3B82F680',
+        padding:20,
+        borderRadius:12
+    },
+    circle:{
+        width:16,
+        height:16,
+        borderRadius:50,
+        backgroundColor:Colors.primary,
+        marginRight:10
+    },
+    cardTop:{
+        flexDirection:'row',
+        alignItems:'center',
+    },
+    radio:{
+        borderWidth:1.5,
+        padding:3,
+        borderRadius:30,
+        width:24,
+        height:24,
+        alignItems:'center',
+        justifyContent:'center',
+    },
+    radioCircle:{
+        width:10,
+        height:10,
+        borderRadius:30,
+        backgroundColor:Colors.primary
+    },
+    optionContainer:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'flex-start',
+        columnGap:8,
+        padding:10,
+        borderWidth:2,
+        borderRadius:16,
+    },
+    options:{
+        flexDirection:'row',
+        flexWrap:'wrap',
+        columnGap:'5%',
+        rowGap:10
+    },
+    locations:{
+        gap:10,
+        marginTop:20
+    }
+});
+
+export default listingSheet

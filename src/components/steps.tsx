@@ -64,11 +64,59 @@ export function Skills(){
 }
 
 export function Preferences(){
+    const type = ['Internship', 'Full-time', 'Freelance', 'Part-time'];
+    const mode = ['Remote', 'Hybrid', 'On-site'];
+    const [ selectedSkills, setSkills ] = useState<string[]>([]);
+    const handleSkill = (skill:string)=>{
+        if(!selectedSkills.includes(skill)){
+            setSkills([...selectedSkills, skill])
+        }else{
+            let index = selectedSkills.indexOf(skill);
+            let temp = [...selectedSkills];
+            temp.splice(index, 1);
+            setSkills([...temp])
+        }
+    }
+    const borderColor = (skill:string)=> selectedSkills.includes(skill) ? Colors.primary : '#00000063';
+    const backgroundColor = (skill:string)=> selectedSkills.includes(skill) ? '#EFF6FF' : 'transparent';
+    const color = (skill:string)=> selectedSkills.includes(skill) ? Colors.primary : '#000000B2';
     return(
         <View>
             <ThemedText type="title" style={{marginTop:10}}>Job Preferences</ThemedText>
             <LabelInput label="Preferred Role" placeholder="Frontend Developer"/>
             <LabelInput label="Experience Level" placeholder="Entry-Level"/>
+            <View style={stepsSheet.typeView}>
+                <ThemedText color="#000000B2">Job Type</ThemedText>
+                <View style={stepsSheet.skillsView}>
+                    {
+                        type.map((skill, index)=>(
+                            <TouchableOpacity 
+                                style={[stepsSheet.skillView, {borderColor: borderColor(skill), backgroundColor:backgroundColor(skill)}]} 
+                                key={index}
+                                onPress={()=>handleSkill(skill)}
+                            >
+                                <ThemedText size={11} color={color(skill)}>{skill}</ThemedText>
+                            </TouchableOpacity>
+                        ))
+                    }
+                </View>
+            </View>
+            <View style={stepsSheet.typeView}>
+                <ThemedText color="#000000B2">Work mode</ThemedText>
+                <View style={stepsSheet.skillsView}>
+                    {
+                        mode.map((skill, index)=>(
+                            <TouchableOpacity 
+                                style={[stepsSheet.skillView, {borderColor: borderColor(skill), backgroundColor:backgroundColor(skill)}]} 
+                                key={index}
+                                onPress={()=>handleSkill(skill)}
+                            >
+                                <ThemedText size={11} color={color(skill)}>{skill}</ThemedText>
+                            </TouchableOpacity>
+                        ))
+                    }
+                </View>
+            </View>
         </View>
     )
 }
@@ -84,7 +132,10 @@ const stepsSheet = StyleSheet.create({
         paddingVertical:2,
         paddingHorizontal:8,
         borderWidth:1,
-        margin:8,
+        margin:5,
         borderRadius: 16
+    },
+    typeView:{
+        marginVertical:10
     }
 });

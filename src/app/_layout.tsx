@@ -11,6 +11,7 @@ export default function TabLayout() {
         <Stack.Screen name="onboard" options={{ headerShown: false }} />
         <Stack.Screen name="auth" options={{ headerShown: false }} />
         <Stack.Screen name="setup" options={{ headerShown: false }} />
+        <Stack.Screen name="listing" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
   );
