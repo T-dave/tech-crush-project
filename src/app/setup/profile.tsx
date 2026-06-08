@@ -11,7 +11,7 @@ export default function Reset() {
   const [page, setPage] = useState(1);
   const handleNext = ()=>{
     if(page === 4){
-        router.navigate('/listing')
+        router.navigate('/(tabs)')
     }else{
         setPage(page + 1)
     }

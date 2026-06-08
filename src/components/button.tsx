@@ -17,6 +17,7 @@ interface props extends ViewProps {
   type?: Type;
   isLoading?: boolean;
   title: string;
+  textSize?: number;
 }
 
 export default function Button({
@@ -25,6 +26,7 @@ export default function Button({
   textColor,
   type = "primary",
   isLoading = false,
+  textSize=16,
   title,
   style,
 }: props) {
@@ -42,7 +44,7 @@ export default function Button({
       {isLoading ? (
         <ActivityIndicator size={23} />
       ) : (
-        <ThemedText style={[styles.text, {color:textColor ? textColor : type==='primary' ? "#FFF": "#212FB2"}]}>{title}</ThemedText>
+        <ThemedText style={[styles.text, {color:textColor ? textColor : type==='primary' ? "#FFF": "#212FB2", fontSize:textSize}]}>{title}</ThemedText>
       )}
     </TouchableOpacity>
   );
@@ -50,9 +52,10 @@ export default function Button({
 
 const styles = StyleSheet.create({
   button: {
-    padding: 15,
+    height:50,
     borderRadius: 10,
     alignItems: "center",
+    justifyContent:'center'
   },
   primary: {
     backgroundColor: 'red',

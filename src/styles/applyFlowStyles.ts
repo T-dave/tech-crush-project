@@ -1,0 +1,150 @@
+import { Colors, Spacing } from '@/constants/theme';
+import { StyleSheet } from 'react-native';
+
+export const applyFlowStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Colors.light.background,
+  },
+  header: {
+    paddingHorizontal: Spacing.three,
+    paddingTop: Spacing.three,
+    paddingBottom: Spacing.three,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: Colors.light.text,
+    marginBottom: Spacing.one,
+  },
+  subtitle: {
+    fontSize: 14,
+    color: Colors.light.textSecondary,
+  },
+  contentContainer: {
+    paddingHorizontal: Spacing.three,
+    paddingVertical: Spacing.three,
+    flex: 1,
+  },
+  section: {
+    marginBottom: Spacing.four,
+  },
+  sectionLabel: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: Colors.light.text,
+    marginBottom: Spacing.two,
+  },
+  fileUploadBox: {
+    borderWidth: 2,
+    borderColor: Colors.primary,
+    borderRadius: 12,
+    padding: Spacing.three,
+    alignItems: 'center',
+    backgroundColor: 'rgba(37, 99, 235, 0.05)',
+  },
+  uploadIcon: {
+    fontSize: 40,
+    marginBottom: Spacing.two,
+  },
+  uploadText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: Colors.light.text,
+    marginBottom: Spacing.half,
+  },
+  uploadSubtext: {
+    fontSize: 12,
+    color: Colors.light.textSecondary,
+  },
+  fileItem: {
+    backgroundColor: Colors.light.backgroundElement,
+    padding: Spacing.two,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: Spacing.two,
+    borderLeftWidth: 4,
+    borderLeftColor: '#10B981',
+  },
+  fileInfo: {
+    flex: 1,
+  },
+  fileName: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: Colors.light.text,
+  },
+  fileSize: {
+    fontSize: 12,
+    color: Colors.light.textSecondary,
+    marginTop: Spacing.half,
+  },
+  removeButton: {
+    color: '#EF4444',
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: Colors.light.backgroundSelected,
+    borderRadius: 8,
+    paddingHorizontal: Spacing.two,
+    paddingVertical: Spacing.two,
+    fontSize: 14,
+    backgroundColor: Colors.light.background,
+    color: Colors.light.text,
+    marginBottom: Spacing.two,
+  },
+  textArea: {
+    borderWidth: 1,
+    borderColor: Colors.light.backgroundSelected,
+    borderRadius: 8,
+    paddingHorizontal: Spacing.two,
+    paddingVertical: Spacing.two,
+    fontSize: 14,
+    backgroundColor: Colors.light.background,
+    color: Colors.light.text,
+    height: 100,
+    textAlignVertical: 'top',
+  },
+  optionalLabel: {
+    fontSize: 12,
+    color: Colors.light.textSecondary,
+    marginLeft: Spacing.half,
+  },
+  buttonContainer: {
+    paddingHorizontal: Spacing.three,
+    paddingBottom: Spacing.five,
+  },
+  button: {
+    backgroundColor: Colors.primary,
+    paddingVertical: Spacing.two,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: Colors.secondary,
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  bottomNav: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: Colors.light.background,
+    paddingVertical: Spacing.two,
+    borderTopWidth: 1,
+    borderTopColor: Colors.light.backgroundSelected,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+  navItem: {
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

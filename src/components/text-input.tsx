@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
         borderRadius:5,
         height:50,
         padding:5,
+        flex:1
     },
     input:{
         flex:1

@@ -13,7 +13,6 @@ const listingSheet = StyleSheet.create({
     line:{
         height:3,
         flex:1,
-        backgroundColor:'#00000040',
         borderRadius:16
     },
     pageView:{
@@ -29,7 +28,6 @@ const listingSheet = StyleSheet.create({
         height:29,
         alignItems:'center',
         justifyContent:'center',
-        backgroundColor:Colors.primary,
         borderRadius:50,
     },
     card:{
@@ -82,6 +80,25 @@ const listingSheet = StyleSheet.create({
     locations:{
         gap:10,
         marginTop:20
+    },
+    toggle:{
+        flexDirection:'row',
+        borderRadius:64,
+        width:46,
+        height:26,
+        padding:3
+    },
+    toggleCircle:{
+        width:20,
+        height:20,
+        backgroundColor:"#FFF",
+        borderRadius:50
+    },
+    beginerFriendly:{
+        flexDirection:'row', 
+        alignItems:'center', 
+        justifyContent:'space-between',
+        marginVertical:10
     }
 });
 
