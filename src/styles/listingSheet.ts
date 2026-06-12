@@ -99,6 +99,13 @@ const listingSheet = StyleSheet.create({
         alignItems:'center', 
         justifyContent:'space-between',
         marginVertical:10
+    },
+    input:{
+        height:141, 
+        textAlignVertical:'top',
+        borderWidth:1.5,
+        borderColor:Colors.primary,
+        borderRadius:8
     }
 });
 

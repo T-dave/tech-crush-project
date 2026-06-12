@@ -11,7 +11,7 @@ export default function Card({title, children, style}: CardProps){
         <View style={[listingSheet.card, style]}>
             <View style={listingSheet.cardTop}>
                 <View style={listingSheet.circle}/>
-                <ThemedText color={Colors.primary}>{title}</ThemedText>
+                <ThemedText color={Colors.primary} weight={700}>{title}</ThemedText>
             </View>
             <View>
                 {children}
