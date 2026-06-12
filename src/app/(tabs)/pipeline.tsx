@@ -11,13 +11,12 @@ import {
 } from "react-native";
 
 const { width } = Dimensions.get("window");
-// Math calculating equal width for side-by-side grid cards minus padding boundaries
+
 const CARD_WIDTH = (width - 46) / 2;
 
 export default function PipelineScreen() {
   const [activeTab, setActiveTab] = useState("Applied");
 
-  // Applicant dataset explicitly matching your Figma screen view metrics
   const applicants = [
     {
       id: "1",
@@ -67,7 +66,6 @@ export default function PipelineScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Top Navigation Row */}
       <View style={styles.topHeader}>
         <TouchableOpacity style={styles.backButton}>
           <Ionicons name="chevron-back" size={24} color="#1e293b" />
@@ -87,7 +85,6 @@ export default function PipelineScreen() {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        {/* Active Open Role Meta Card Header */}
         <View style={styles.jobOverviewCard}>
           <View style={styles.jobAvatarPlaceholder}>
             <Ionicons name="briefcase-outline" size={20} color="#2563eb" />
@@ -169,7 +166,6 @@ export default function PipelineScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* Side-by-Side Flex Wrapping Candidate Cards */}
         <View style={styles.gridContainer}>
           {filteredApplicants.map((applicant) => (
             <View key={applicant.id} style={styles.candidateCard}>
@@ -187,7 +183,6 @@ export default function PipelineScreen() {
                 </View>
               </View>
 
-              {/* Skill + City Parameter Pill Badges */}
               <View style={styles.tagWrapper}>
                 <View style={[styles.tag, { backgroundColor: "#fae8ff" }]}>
                   <Text style={[styles.tagTextLabel, { color: "#d946ef" }]}>
@@ -204,7 +199,6 @@ export default function PipelineScreen() {
           ))}
         </View>
 
-        {/* Action Call to Insert Profiles manually */}
         <TouchableOpacity style={styles.addManuallyButton}>
           <Ionicons name="add-circle" size={18} color="#2563eb" />
           <Text style={styles.addManuallyText}>Add manually</Text>
