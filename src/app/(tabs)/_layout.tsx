@@ -1,16 +1,21 @@
-import { Colors } from "@/constants/theme";
-import { Ionicons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { useColorScheme } from "react-native";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors.primary,
+        tabBarActiveTintColor: "#2563eb", // Active blue color from your Figma design
+        tabBarInactiveTintColor: "#64748b",
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: "#ffffff",
+          borderTopWidth: 1,
+          borderTopColor: "#e2e8f0",
+          height: 60,
+          paddingBottom: 8,
+          paddingTop: 8,
+        },
       }}
     >
       <Tabs.Screen
@@ -18,37 +23,27 @@ export default function TabLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color }) => (
-            <Ionicons size={28} name="home" color={color} />
+            <Feather size={22} name="home" color={color} />
           ),
         }}
       />
 
       <Tabs.Screen
-        name="explore"
+        name="listing"
         options={{
-          title: "Explore",
+          title: "Listing",
           tabBarIcon: ({ color }) => (
-            <Ionicons size={28} name="home" color={color} />
+            <Feather size={22} name="file-text" color={color} />
           ),
         }}
       />
 
       <Tabs.Screen
-        name="search"
+        name="applications"
         options={{
-          title: "Search",
+          title: "Applications",
           tabBarIcon: ({ color }) => (
-            <Ionicons size={28} name="search" color={color} />
-          ),
-        }}
-      />
-
-      <Tabs.Screen
-        name="saved"
-        options={{
-          title: "Saved",
-          tabBarIcon: ({ color }) => (
-            <Ionicons size={28} name="bookmark" color={color} />
+            <Feather size={22} name="briefcase" color={color} />
           ),
         }}
       />
@@ -58,7 +53,7 @@ export default function TabLayout() {
         options={{
           title: "Pipeline",
           tabBarIcon: ({ color }) => (
-            <Ionicons size={28} name="git-network-outline" color={color} />
+            <Feather size={22} name="share-2" color={color} />
           ),
         }}
       />
