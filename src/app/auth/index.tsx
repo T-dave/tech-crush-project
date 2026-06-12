@@ -11,7 +11,7 @@ import Bottom from "./bottom"
 import { router } from "expo-router"
 export default function Register(){
     const [ tick, setTick ] = useState(false);
-    const [ type, setType ] = useState("seeker")
+    const [ type, setType ] = useState("seeker");
     return(
         <Container style={{paddingHorizontal:20}}>
             <View style = {authStyles.launchpadView}>

@@ -11,14 +11,7 @@ import Bottom from "./bottom"
 import { router } from "expo-router"
 export default function LogIn(){
     const [ tick, setTick ] = useState(false);
-    const [ type, setType ] = useState("seeker");
-    const handleButton=()=>{
-        if(type === 'seeker'){
-            router.replace('/(seeker)');
-        }else{
-            router.replace('/(employer)');
-        }
-    }
+    const [ type, setType ] = useState("seeker")
     return(
         <Container style={{paddingHorizontal:20}}>
             <Top1 title="Welcome back" subtitle="SIgn in to your account"/>
@@ -58,7 +51,7 @@ export default function LogIn(){
                     <ThemedText type="small" color={Colors.primary}> Privacy Policy</ThemedText>.
                 </ThemedText>
             </View>
-            <Bottom buttonText="Log In" buttonPress={handleButton} bottomText="Sign Up" navigation={()=>router.replace('/auth')}/>
+            <Bottom buttonText="Log In" buttonPress={()=>router.replace('/(seeker)')} bottomText="Sign Up" navigation={()=>router.replace('/auth')}/>
         </Container>
     )
 }

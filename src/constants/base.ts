@@ -1,0 +1,1 @@
+export const base = 'https://lunchpad-backend-1.onrender.com'
