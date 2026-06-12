@@ -25,7 +25,7 @@ export default function Card({position, company, location, tags, salary, time, i
                         <ThemedText size={12} style={{lineHeight:15}}>{company}. • {location}</ThemedText>
                         <View style={homeSheet.tags}>
                             {
-                                tags.map((tag)=><View style={homeSheet.tag}>
+                                tags.map((tag, index)=><View key={index} style={homeSheet.tag}>
                                     <ThemedText size={11}>{tag}</ThemedText>
                                         </View>)
                             }

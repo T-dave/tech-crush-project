@@ -22,7 +22,7 @@ export default function ListingScreen(){
                     <ThemedText>Save Draft</ThemedText>
                 </TouchableOpacity>
             </View>
-            <Paging page={page}/>
+            <Paging page={page} pages={["Details", "Requirements", "Preview"]}/>
             {
                 page === 1 ?
                 <Details/>

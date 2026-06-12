@@ -6,8 +6,9 @@ import { TouchableOpacity, View } from "react-native";
 
 interface PagingProps{
     page: number;
+    pages: string[];
 }
-export default function Paging({page}:PagingProps){
+export default function Paging({page, pages}:PagingProps){
     return(
         <View style={{marginVertical:10}}>
             <View style={listingSheet.paging}>
@@ -28,9 +29,9 @@ export default function Paging({page}:PagingProps){
                 </View>
             </View>
             <View style={listingSheet.paging}>
-                <ThemedText type="small" color={page >= 1 ? Colors.primary : '#00000080'}>Details</ThemedText>
-                <ThemedText type="small" color={page >= 2 ? Colors.primary : '#00000080'}>Requirements</ThemedText>
-                <ThemedText type="small" color={page === 3 ? Colors.primary : '#00000080'}>Preview</ThemedText>
+                <ThemedText type="small" color={page >= 1 ? Colors.primary : '#00000080'}>{pages[0]}</ThemedText>
+                <ThemedText type="small" color={page >= 2 ? Colors.primary : '#00000080'}>{pages[1]}</ThemedText>
+                <ThemedText type="small" color={page === 3 ? Colors.primary : '#00000080'}>{pages[2]}</ThemedText>
             </View>
         </View>
     )

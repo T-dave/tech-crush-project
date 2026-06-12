@@ -8,7 +8,8 @@ import { ThemedText } from "@/components/themed-text";
 import { Colors } from "@/constants/theme";
 import homeSheet from "@/styles/homeSheet";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Image, ScrollView, TextInput, View } from "react-native";
+import { router } from "expo-router";
+import { Image, ScrollView, TextInput, TouchableOpacity, View } from "react-native";
 
 
 export default function Home(){
@@ -46,15 +47,17 @@ export default function Home(){
                     <ThemedText size={18}>Verified for you</ThemedText>
                     <ThemedText type="small" color={Colors.primary}>See all</ThemedText>
                 </View>
-                <Card
-                    position="UI/UX Design Intern"
-                    company="TechCorp Intl"
-                    location="Lagos"
-                    tags={["Internship", "Remote", "New"]}
-                    salary="N250k"
-                    time="2 days"
-                    image={require('../../../assets/images/techCorp.png')}                 
-                />
+                <TouchableOpacity onPress={()=>router.navigate('/application')}>
+                    <Card
+                        position="UI/UX Design Intern"
+                        company="TechCorp Intl"
+                        location="Lagos"
+                        tags={["Internship", "Remote", "New"]}
+                        salary="N250k"
+                        time="2 days"
+                        image={require('../../../assets/images/techCorp.png')}                 
+                    />
+                </TouchableOpacity>
                 <Card
                     position="UI/UX Design Intern"
                     company="TechCorp Intl"

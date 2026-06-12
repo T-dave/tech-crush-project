@@ -38,8 +38,8 @@ export default function Register(){
             </View>
             <View>
                 <View style={authStyles.names}>
-                    <LabelInput label="First Name" placeholder="Tunde"/>
-                    <LabelInput label="Last Name" placeholder="Adeleke"/>
+                    <LabelInput label="First Name" placeholder="Tunde" style={{flex:1}}/>
+                    <LabelInput label="Last Name" placeholder="Adeleke" style={{flex:1}}/>
                 </View>
                 <LabelInput label="Email Address" placeholder="tunde@gmail.com"/>
                 <LabelInput label="Tech Track" placeholder="e.g. Frontend, Design..."/>

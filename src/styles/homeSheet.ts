@@ -96,7 +96,33 @@ const homeSheet = StyleSheet.create({
         flexDirection:'row',
         flexWrap:'wrap',
         marginTop:8
+    },
+    type:{
+        paddingHorizontal:8,
+        paddingVertical:5,
+        borderRadius:120,
+        margin:3,
+        borderColor:'#9A9A9A73'
+    },
+    stats:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
+        borderWidth:1,
+        borderColor:'#CED4DA4D',
+        borderRadius:12,
+        backgroundColor:'#F8F9FA',
+        padding:10,
+        marginVertical:10
+    },
+    stat:{
+        alignItems:'center',
+        flex:1
+    },
+    statMiddle:{
+        borderRightWidth:1,
+        borderLeftWidth:1,
+        borderColor:'#CED4DA4D'
     }
 });
-
 export default homeSheet

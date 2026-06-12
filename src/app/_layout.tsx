@@ -13,6 +13,7 @@ export default function RootLayout() {
         <Stack.Screen name="setup" options={{ headerShown: false }} />
         <Stack.Screen name="listing" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="application" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
   );
