@@ -59,7 +59,7 @@ const OnboardingScreen = () => {
       <Button onPress={scrollToNext} isLoading={isLoading} title={currentIndex === onboardingData.length - 1 ? "Get Started" : "Next"}/>
       {
         currentIndex === onboardingData.length - 1 &&
-        <Button onPress={()=>router.replace('/')} title="Sign in" type="secondary"/>
+        <Button onPress={()=>router.replace('/auth/log-in')} title="Sign in" type="secondary"/>
       }
       </View>
     </SafeAreaView>

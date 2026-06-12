@@ -8,14 +8,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: "#2563eb", // Active blue color from your Figma design
         tabBarInactiveTintColor: "#64748b",
         headerShown: false,
-        tabBarStyle: {
-          backgroundColor: "#ffffff",
-          borderTopWidth: 1,
-          borderTopColor: "#e2e8f0",
-          height: 60,
-          paddingBottom: 8,
-          paddingTop: 8,
-        },
+        
       }}
     >
       <Tabs.Screen
@@ -36,17 +29,17 @@ export default function TabLayout() {
             <Feather size={22} name="file-text" color={color} />
           ),
         }}
-      />
+      /> 
 
-      <Tabs.Screen
-        name="applications"
+      {/* <Tabs.Screen
+        name="search"
         options={{
-          title: "Applications",
+          title: "Search",
           tabBarIcon: ({ color }) => (
-            <Feather size={22} name="briefcase" color={color} />
+            <Feather size={22} name="search" color={color} />
           ),
         }}
-      />
+      /> */}
 
       <Tabs.Screen
         name="pipeline"

@@ -11,8 +11,8 @@ export default function RootLayout() {
         <Stack.Screen name="onboard" options={{ headerShown: false }} />
         <Stack.Screen name="auth" options={{ headerShown: false }} />
         <Stack.Screen name="setup" options={{ headerShown: false }} />
-        <Stack.Screen name="listing" options={{ headerShown: false }} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(seeker)" options={{ headerShown: false }} />
+        <Stack.Screen name="(employer)" options={{ headerShown: false }} />
         <Stack.Screen name="application" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
