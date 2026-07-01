@@ -6,12 +6,21 @@ import { ThemedText } from "@/components/themed-text"
 import { Colors } from "@/constants/theme"
 import { authStyles } from "@/styles/auth-styles"
 import { useState } from "react"
-import { Text, TouchableOpacity, TouchableWithoutFeedback, View, Image } from "react-native"
+import { Text, TouchableOpacity, View, Image } from "react-native"
 import Bottom from "./bottom"
 import { router } from "expo-router"
+import { login } from "@/api/auth.api";
 export default function LogIn(){
     const [ tick, setTick ] = useState(false);
-    const [ type, setType ] = useState("seeker")
+    const [ type, setType ] = useState("seeker");
+    // const handleLogin = (email:string, password:string)=>{
+    //     try{
+    //         const result = login('tomyomo@gmail.com', '12345');
+    //         console.log(result);
+    //     }catch(err){
+    //         console.log(err)
+    //     }
+    // }
     return(
         <Container style={{paddingHorizontal:20}}>
             <Top1 title="Welcome back" subtitle="SIgn in to your account"/>
